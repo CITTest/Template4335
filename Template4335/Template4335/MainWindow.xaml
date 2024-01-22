@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="400" MinHeight="800" MinWidth="400">
     <Grid>
-        <Button Content="Антипова Екатерина 4335" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Антипова Екатерина 4335" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Antipova_Ekaterina_4335_Click"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" >
             </RowDefinition>

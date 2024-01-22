@@ -1,0 +1,13 @@
+﻿<Window x:Class="Template4335.Antipova_Ekaterina_4335"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Template4335"
+        mc:Ignorable="d"
+        Title="Antipova_Ekaterina_4335" Height="450" Width="800">
+    <Grid>
+        <Label Content="Антипова Екатерина 19 лет" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,0.518"/>
+
+    </Grid>
+</Window>

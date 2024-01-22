@@ -1,0 +1,17 @@
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\bin\Debug\Template4335.exe.config
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\bin\Debug\Template4335.exe
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\bin\Debug\Template4335.pdb
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Antipova_Ekaterina_4335.g.cs
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\MainWindow.g.cs
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\App.g.cs
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335_MarkupCompile.cache
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335_MarkupCompile.lref
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\MainWindow.baml
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Antipova_Ekaterina_4335.baml
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335.g.resources
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335.Properties.Resources.resources
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335.exe
+\\Mac\Home\Desktop\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
