@@ -24,5 +24,12 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void B(object sender, RoutedEventArgs e)
+        {
+            _4335__Dautova m  =new _4335__Dautova();
+            m.Show();
+            Close();
+        }
     }
 }
