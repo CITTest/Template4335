@@ -20,15 +20,18 @@ namespace Template4335
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Porfirev_4335 window;
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        
 
         private void Porfirev_4335(object sender, RoutedEventArgs e)
         {
-
+            this.window = new Porfirev_4335();
+            window.Show();
+            this.Close();
         }
     }
 }
