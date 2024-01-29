@@ -33,11 +33,10 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
 
         </Grid.RowDefinitions>
-
+        <Button Grid.Row="13" Click="Porfirev_4335">Узнать обо мне</Button>
     </Grid>
 </Window>
