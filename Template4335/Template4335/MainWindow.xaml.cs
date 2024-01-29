@@ -24,5 +24,11 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+
+        private void Porfirev_4335(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
