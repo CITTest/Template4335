@@ -24,5 +24,12 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void Khasanshin4335(object sender, RoutedEventArgs e)
+        {
+            Khasanshin4335 khas = new Khasanshin4335();
+            khas.Show();
+            Close();
+        }
     }
 }
