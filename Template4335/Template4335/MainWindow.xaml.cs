@@ -24,5 +24,16 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void group_4335(object sender, RoutedEventArgs e)
+        {
+            Nigametyanova4335 nigametyanova4335 = new Nigametyanova4335();
+            nigametyanova4335.Show();
+        }
     }
 }
