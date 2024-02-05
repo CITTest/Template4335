@@ -38,6 +38,6 @@
             <RowDefinition Height="*"></RowDefinition>
 
         </Grid.RowDefinitions>
-
+        <Button Grid.Row="18" Click="Button_Click">ShokurovNA_4335</Button>
     </Grid>
 </Window>
