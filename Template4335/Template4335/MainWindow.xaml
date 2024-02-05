@@ -38,6 +38,6 @@
             <RowDefinition Height="*"></RowDefinition>
 
         </Grid.RowDefinitions>
-
+        <Button Grid.Row="3" Click="Akhunova4335_Click">Ахунова Диляфруз, 18</Button>
     </Grid>
 </Window>
