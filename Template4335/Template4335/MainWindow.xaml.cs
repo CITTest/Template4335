@@ -24,5 +24,11 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void Akhunova4335_Click(object sender, RoutedEventArgs e)
+        {
+            Akhunova4335 akhunova4335 = new Akhunova4335();
+            akhunova4335.Show();
+        }
     }
 }
