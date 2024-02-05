@@ -1,0 +1,13 @@
+﻿<Window x:Class="Template4335.RasulGaleev"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Template4335"
+        mc:Ignorable="d"
+        Title="RasulGaleev" Height="450" Width="800">
+    <Grid>
+        <TextBlock Text="Имя: 4335_Galeev" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Возраст: 18" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+    </Grid>
+</Window>
