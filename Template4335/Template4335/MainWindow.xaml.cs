@@ -24,5 +24,13 @@ namespace Template4335
         {
             InitializeComponent();
         }
+        private void ShowAuthorInfo(object sender, RoutedEventArgs e)
+        {
+            // Создаем окно с информацией об авторе
+            RasulGaleev authorInfoWindow = new RasulGaleev();
+
+            // Открываем окно
+            authorInfoWindow.Show();
+        }
     }
 }
