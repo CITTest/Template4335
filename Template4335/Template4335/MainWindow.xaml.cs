@@ -24,5 +24,10 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Габидуллин Булат, группа 4335");
+        }
     }
 }
