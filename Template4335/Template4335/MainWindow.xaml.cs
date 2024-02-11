@@ -24,5 +24,11 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void Baryshev_4335(object sender, RoutedEventArgs e)
+        {
+            Window1 myinfo = new Window1();
+            myinfo.Show();
+        }
     }
 }
