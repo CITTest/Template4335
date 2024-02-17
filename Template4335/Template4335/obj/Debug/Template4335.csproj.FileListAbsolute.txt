@@ -34,3 +34,9 @@ C:\Users\Катя\Template4335\Template4335\Template4335\obj\Debug\Template4335.
 C:\Users\Катя\Template4335\Template4335\Template4335\obj\Debug\Template4335.exe
 C:\Users\Катя\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
 C:\Users\Катя\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.ResolveComReference.cache
+C:\Users\Катя\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.dll
+C:\Users\Катя\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Катя\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.xml
+C:\Users\Катя\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Катя\Template4335\Template4335\Template4335\obj\Debug\Template4335_Content.g.cs
+C:\Users\Катя\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CopyComplete

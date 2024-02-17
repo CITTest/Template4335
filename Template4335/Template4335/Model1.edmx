@@ -5,51 +5,51 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище isrpoModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="1">
+        <EntityType Name="Users">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="Наименование услуги" Type="varbinary" MaxLength="100" Nullable="false" />
-          <Property Name="Вид услуги" Type="varbinary" MaxLength="100" />
-          <Property Name="Код услуги" Type="varbinary" MaxLength="50" />
-          <Property Name="Стоимость" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NaimeovanieUslugi" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VidUslugi" Type="varchar" MaxLength="50" />
+          <Property Name="KodUslugi" Type="varchar" MaxLength="50" />
+          <Property Name="Stoimost" Type="int" />
         </EntityType>
         <EntityContainer Name="Хранилище isrpoModelContainer">
-          <EntitySet Name="1" EntityType="Self.1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="isrpoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="C1">
+        <EntityType Name="Users">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Наименование_услуги" Type="Binary" MaxLength="100" FixedLength="false" Nullable="false" />
-          <Property Name="Вид_услуги" Type="Binary" MaxLength="100" FixedLength="false" />
-          <Property Name="Код_услуги" Type="Binary" MaxLength="50" FixedLength="false" />
-          <Property Name="Стоимость" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NaimeovanieUslugi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VidUslugi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KodUslugi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Stoimost" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="isrpoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="C1" EntityType="Self.C1" />
+        <EntityContainer Name="isrpoEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.Users" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище isrpoModelContainer" CdmEntityContainer="isrpoEntities">
-          <EntitySetMapping Name="C1">
-            <EntityTypeMapping TypeName="isrpoModel.C1">
-              <MappingFragment StoreEntitySet="1">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Наименование_услуги" ColumnName="Наименование услуги" />
-                <ScalarProperty Name="Вид_услуги" ColumnName="Вид услуги" />
-                <ScalarProperty Name="Код_услуги" ColumnName="Код услуги" />
-                <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
+        <EntityContainerMapping StorageEntityContainer="Хранилище isrpoModelContainer" CdmEntityContainer="isrpoEntities2">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="isrpoModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NaimeovanieUslugi" ColumnName="NaimeovanieUslugi" />
+                <ScalarProperty Name="VidUslugi" ColumnName="VidUslugi" />
+                <ScalarProperty Name="KodUslugi" ColumnName="KodUslugi" />
+                <ScalarProperty Name="Stoimost" ColumnName="Stoimost" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

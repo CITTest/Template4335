@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -46,11 +47,28 @@ namespace Template4335
             list = new string[_rows, _columns]; //для двумерного массива list выделяется _rows строк и _columns столбцов для будущей записи в него данных из xlsx-файла с помощью вложенного цикла
             for (int j = 0; j < _columns; j++)
                 for (int i = 0; i < _rows; i++)
-                 list[i, j] = ObjWorkSheet.Cells[i + 1, j + 1].Text;
-             ObjWorkBook.Close(false, Type.Missing, Type.Missing);// закрывается сессия работы с книгой Excel.Workbook
+                    list[i, j] = ObjWorkSheet.Cells[i + 1, j + 1].Text;
+            ObjWorkBook.Close(false, Type.Missing, Type.Missing);// закрывается сессия работы с книгой Excel.Workbook
             ObjWorkExcel.Quit();//реализован выход из Excel
             GC.Collect();
 
+            using (isrpoEntities2 usersEntities = new isrpoEntities2())
+            {
+               
+                for (int i = 1; i < _rows; i++)
+                {
+                    usersEntities.Users.Add(new Users()
+                    {
+                    
+                        NaimeovanieUslugi = list[i, 1],
+                        VidUslugi = list[i, 2],
+                        KodUslugi = list[i, 3],
+                        Stoimost = Convert.ToInt32(list[i, 4])
+                    });
+                }
+                usersEntities.SaveChanges();
+                MessageBox.Show("все успешно");
+            }
         }
     }
 }

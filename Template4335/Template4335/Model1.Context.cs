@@ -13,10 +13,10 @@ namespace Template4335
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class isrpoEntities : DbContext
+    public partial class isrpoEntities2 : DbContext
     {
-        public isrpoEntities()
-            : base("name=isrpoEntities")
+        public isrpoEntities2()
+            : base("name=isrpoEntities2")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Template4335
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C1> C1 { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }
