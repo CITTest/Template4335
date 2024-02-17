@@ -8,6 +8,8 @@
         Title="Antipova_Ekaterina_4335" Height="450" Width="800">
     <Grid>
         <Label Content="Антипова Екатерина 19 лет" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,0.518"/>
+        <Button Content="Импорт данных" HorizontalAlignment="Left" Margin="239,235,0,0" VerticalAlignment="Top" Height="33" Width="106" Click="Button_Click"/>
+        <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="445,235,0,0" VerticalAlignment="Top" Height="33" Width="106"/>
 
     </Grid>
 </Window>
