@@ -70,5 +70,61 @@ namespace Template4335
                 MessageBox.Show("все успешно");
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) // export
+        {
+            using (var context = new isrpoEntities2())
+            {
+                var services = context.Users.OrderBy(s => s.Stoimost).ToList();
+                var groupedServices = services.GroupBy(s => s.VidUslugi);
+
+                var app = new Excel.Application();
+                app.SheetsInNewWorkbook = groupedServices.Count();
+                Excel.Workbook workbook = app.Workbooks.Add(Type.Missing);
+
+                int sheetIndex = 1;
+                foreach (var group in groupedServices)
+                {
+                    Excel.Worksheet worksheet = workbook.Worksheets.Item[sheetIndex];
+                    worksheet.Name = group.Key;
+
+                    worksheet.Cells[1, 1] = "Id";
+                    worksheet.Cells[1, 2] = "Название услуги";
+                    worksheet.Cells[1, 3] = "Вид услуги";
+                    worksheet.Cells[1, 4] = "Код услуги";
+                    worksheet.Cells[1, 5] = "Стоимость";
+
+                    int rowIndex = 2;
+                    foreach (var service in group)
+                    {
+                        worksheet.Cells[rowIndex, 1] = service.Id;
+                        worksheet.Cells[rowIndex, 2] = service.NaimeovanieUslugi;
+                        worksheet.Cells[rowIndex, 3] = service.VidUslugi;
+                        worksheet.Cells[rowIndex, 4] = service.KodUslugi;
+                        worksheet.Cells[rowIndex, 5] = service.Stoimost;
+
+                        rowIndex++;
+                    }
+
+                    sheetIndex++;
+                }
+
+                SaveFileDialog sfd = new SaveFileDialog()
+                {
+                    DefaultExt = "*.xlsx",
+                    Filter = "Файл Excel (*.xlsx)|*.xlsx",
+                    Title = "Сохранить данные в файл"
+                };
+
+                if (sfd.ShowDialog() == true)
+                {
+                    workbook.SaveAs(sfd.FileName);
+                    workbook.Close();
+                    app.Quit();
+                    MessageBox.Show("Данные успешно экспортированы.");
+                }
+            }
+        }
     }
+   
 }
