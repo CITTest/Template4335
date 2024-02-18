@@ -18,7 +18,7 @@ namespace Template4335
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // Указываем путь к файлу Excel
-            string filePath = "путь_к_вашему_файлу.xlsx";
+            string filePath = "C:/Users/sljus/OneDrive/Рабочий стол/2.xlsx";
 
             // Создаем экземпляр DataLoader
             DataLoader dataLoader = new DataLoader();
