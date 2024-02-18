@@ -44,7 +44,7 @@ namespace Template4335
             public string Services { get; set; }
             public string Status { get; set; }
             public DateTime ClosingDate { get; set; }
-            public DateTime RentTime { get; set; }
+            public string RentTime { get; set; }
         }
 
         public class DataLoader
@@ -63,15 +63,23 @@ namespace Template4335
 
                 for (int i = 2; i <= rowCount; i++)
                 {
+                    string orderCode = excelRange.Cells[i, 2]?.Value2?.ToString();
+                    DateTime creationDate = DateTime.FromOADate((double)(excelRange.Cells[i, 3]?.Value2 ?? 0));
+                    string clientCode = excelRange.Cells[i, 5]?.Value2?.ToString();
+                    string services = excelRange.Cells[i, 6]?.Value2?.ToString();
+                    string status = excelRange.Cells[i, 7]?.Value2?.ToString();
+                    DateTime closingDate = DateTime.FromOADate((double)(excelRange.Cells[i, 8]?.Value2 ?? 0));
+                    string rentTime = excelRange.Cells[i, 9]?.Value2?.ToString();
+
                     Order order = new Order
                     {
-                        OrderCode = excelRange.Cells[i, 2].Value2.ToString(),
-                        CreationDate = DateTime.FromOADate((double)excelRange.Cells[i, 3].Value2),
-                        ClientCode = excelRange.Cells[i, 5].Value2.ToString(),
-                        Services = excelRange.Cells[i, 6].Value2.ToString(),
-                        Status = excelRange.Cells[i, 7].Value2.ToString(),
-                        ClosingDate = DateTime.FromOADate((double)excelRange.Cells[i, 8].Value2),
-                        RentTime = DateTime.FromOADate((double)excelRange.Cells[i, 9].Value2)
+                        OrderCode = orderCode,
+                        CreationDate = creationDate,
+                        ClientCode = clientCode,
+                        Services = services,
+                        Status = status,
+                        ClosingDate = closingDate,
+                        RentTime = rentTime
                     };
                     orders.Add(order);
                 }
@@ -93,3 +101,4 @@ namespace Template4335
         }
     }
 }
+
