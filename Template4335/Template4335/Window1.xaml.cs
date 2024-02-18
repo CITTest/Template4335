@@ -97,8 +97,53 @@ namespace Template4335
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            using (var context = new OrderContext())
+            {
+                // Получаем данные из базы данных, отсортированные по времени проката
+                var ordersByRentTime = context.Orders.OrderBy(o => o.RentTime).ToList();
+
+                // Создаем новый файл Excel
+                Excel.Application excelApp = new Excel.Application();
+                Excel.Workbook excelWorkbook = excelApp.Workbooks.Add();
+
+                // Получаем уникальные значения времени проката для разделения на категории
+                var uniqueRentTimes = ordersByRentTime.Select(o => o.RentTime).Distinct();
+
+                foreach (var rentTime in uniqueRentTimes)
+                {
+                    // Создаем новый лист Excel для текущей категории
+                    Excel._Worksheet excelWorksheet = excelWorkbook.Sheets.Add();
+                    excelWorksheet.Name = $"RentTime_{rentTime}";
+
+                    // Фильтруем данные для текущей категории
+                    var ordersInCategory = ordersByRentTime.Where(o => o.RentTime == rentTime).ToList();
+
+                    // Записываем данные в лист Excel
+                    for (int i = 0; i < ordersInCategory.Count; i++)
+                    {
+                        excelWorksheet.Cells[i + 1, 1] = ordersInCategory[i].Id;
+                        excelWorksheet.Cells[i + 1, 2] = ordersInCategory[i].OrderCode;
+
+
+                        excelWorksheet.Cells[i + 1, 3] = ordersInCategory[i].CreationDate;
+
+                        excelWorksheet.Cells[i + 1, 4] = ordersInCategory[i].ClientCode;
+                        excelWorksheet.Cells[i + 1, 5] = ordersInCategory[i].Services;
+                    }
+                }
+
+                // Сохраняем новый файл Excel
+                string exportFilePath = "C:\\Users\\sljus\\source\\repos\\ExportedData.xlsx";
+                excelWorkbook.SaveAs(exportFilePath);
+                excelWorkbook.Close();
+                excelApp.Quit();
+
+                // Выводим сообщение об успешном экспорте данных
+                MessageBox.Show("Данные успешно экспортированы в новый файл Excel.");
+            }
 
         }
+
     }
 }
 
