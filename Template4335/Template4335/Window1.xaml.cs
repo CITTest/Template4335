@@ -42,6 +42,9 @@ namespace Template4335
             public DateTime CreationDate { get; set; }
             public string ClientCode { get; set; }
             public string Services { get; set; }
+            public string Status { get; set; }
+            public DateTime ClosingDate { get; set; }
+            public DateTime RentTime { get; set; }
         }
 
         public class DataLoader
@@ -64,8 +67,11 @@ namespace Template4335
                     {
                         OrderCode = excelRange.Cells[i, 2].Value2.ToString(),
                         CreationDate = DateTime.FromOADate((double)excelRange.Cells[i, 3].Value2),
-                        ClientCode = excelRange.Cells[i, 4].Value2.ToString(),
-                        Services = excelRange.Cells[i, 5].Value2.ToString()
+                        ClientCode = excelRange.Cells[i, 5].Value2.ToString(),
+                        Services = excelRange.Cells[i, 6].Value2.ToString(),
+                        Status = excelRange.Cells[i, 7].Value2.ToString(),
+                        ClosingDate = DateTime.FromOADate((double)excelRange.Cells[i, 8].Value2),
+                        RentTime = DateTime.FromOADate((double)excelRange.Cells[i, 9].Value2)
                     };
                     orders.Add(order);
                 }
@@ -79,6 +85,11 @@ namespace Template4335
                     context.SaveChanges();
                 }
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
