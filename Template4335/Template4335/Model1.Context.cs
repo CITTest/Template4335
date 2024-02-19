@@ -13,10 +13,10 @@ namespace Template4335
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersEntities : DbContext
+    public partial class EmplEntities : DbContext
     {
-        public UsersEntities()
-            : base("name=UsersEntities")
+        public EmplEntities()
+            : base("name=EmplEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Template4335
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
     }
 }

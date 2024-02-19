@@ -32,7 +32,7 @@ namespace Template4335
             OpenFileDialog ofd = new OpenFileDialog()
             {
                 DefaultExt = "*.xls;*.xlsx",
-                Filter = "файл Excel (Spisok.xlsx)|*.xlsx",
+                Filter = "файл Excel (5.xlsx)|*.xlsx",
                 Title = "Выберите файл базы данных"
             };
             if (!(ofd.ShowDialog() == true))
@@ -53,6 +53,20 @@ namespace Template4335
             ObjWorkExcel.Quit();
             GC.Collect();
 
+            using (EmplEntities usersEntities = new EmplEntities())
+            {
+                for (int i = 1; i < _rows; i++)
+                {
+                    usersEntities.Employees.Add(new Employee()
+                    {
+                        Role = list[i, 0],
+                        FullName = list[i,1],
+                        Login = list[i, 2],
+                        Pass = list[i, 3]
+                    });
+                }
+                usersEntities.SaveChanges();
+            }
         }
     }
 }

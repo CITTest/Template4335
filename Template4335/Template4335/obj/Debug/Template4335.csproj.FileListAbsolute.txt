@@ -33,3 +33,10 @@ D:\Template4335\Template4335\Template4335\obj\Debug\Template4335.g.resources
 D:\Template4335\Template4335\Template4335\obj\Debug\Template4335.Properties.Resources.resources
 D:\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.GenerateResource.cache
 D:\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CoreCompileInputs.cache
+D:\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.dll
+D:\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.dll
+D:\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.xml
+D:\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.xml
+D:\Template4335\Template4335\Template4335\bin\Debug\ru\EntityFramework.resources.dll
+D:\Template4335\Template4335\Template4335\obj\Debug\Template.DEA61948.Up2Date
+D:\Template4335\Template4335\Template4335\obj\Debug\Template4335_Content.g.cs
