@@ -39,5 +39,6 @@
 
         </Grid.RowDefinitions>
 
+        <Button Content="СЛЕСАРЬ" HorizontalAlignment="Center" Height="29" Grid.Row="14" VerticalAlignment="Center" Width="146" Click="Button_Click"/>
     </Grid>
 </Window>
