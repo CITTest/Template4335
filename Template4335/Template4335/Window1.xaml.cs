@@ -118,17 +118,27 @@ namespace Template4335
                     // Фильтруем данные для текущей категории
                     var ordersInCategory = ordersByRentTime.Where(o => o.RentTime == rentTime).ToList();
 
-                    // Записываем данные в лист Excel
+                    excelWorksheet.Cells[1, 1] = "Id"; // Id
+                    excelWorksheet.Cells[1, 2] = "Дата заказа"; // Дата заказа
+                    excelWorksheet.Cells[1, 3] = "Дата создания"; // Дата создания
+                    excelWorksheet.Cells[1, 4] = "Код клиента"; // Код клиента
+                    excelWorksheet.Cells[1, 5] = "Услуги"; // Услуги
+
+                    // Добавляем заголовки столбцов
+                    excelWorksheet.Cells[1, 1].Font.Bold = true; // Id
+                    excelWorksheet.Cells[1, 2].Font.Bold = true; // Дата заказа
+                    excelWorksheet.Cells[1, 3].Font.Bold = true; // Дата создания
+                    excelWorksheet.Cells[1, 4].Font.Bold = true; // Код клиента
+                    excelWorksheet.Cells[1, 5].Font.Bold = true; // Услуги
+
+                    // Записываем данные в лист Excel, начиная со второй строки
                     for (int i = 0; i < ordersInCategory.Count; i++)
                     {
-                        excelWorksheet.Cells[i + 1, 1] = ordersInCategory[i].Id;
-                        excelWorksheet.Cells[i + 1, 2] = ordersInCategory[i].OrderCode;
-
-
-                        excelWorksheet.Cells[i + 1, 3] = ordersInCategory[i].CreationDate;
-
-                        excelWorksheet.Cells[i + 1, 4] = ordersInCategory[i].ClientCode;
-                        excelWorksheet.Cells[i + 1, 5] = ordersInCategory[i].Services;
+                        excelWorksheet.Cells[i + 2, 1] = ordersInCategory[i].Id;
+                        excelWorksheet.Cells[i + 2, 2] = ordersInCategory[i].OrderCode;
+                        excelWorksheet.Cells[i + 2, 3] = ordersInCategory[i].CreationDate;
+                        excelWorksheet.Cells[i + 2, 4] = ordersInCategory[i].ClientCode;
+                        excelWorksheet.Cells[i + 2, 5] = ordersInCategory[i].Services;
                     }
                 }
 
@@ -141,7 +151,6 @@ namespace Template4335
                 // Выводим сообщение об успешном экспорте данных
                 MessageBox.Show("Данные успешно экспортированы в новый файл Excel.");
             }
-
         }
 
     }
