@@ -8,6 +8,6 @@
         Title="_4335__Dautova" Height="450" Width="800">
     <Grid>
         <TextBlock FontSize="40"> Dilyara, 18</TextBlock>
-        <Button x:Name="BnImport"  Width="90" Height="50">Импорт данных</Button>
+        <Button x:Name="BnImport" Click="BnImport_Click" Width="90" Height="50">Импорт данных</Button>
     </Grid>
 </Window>
