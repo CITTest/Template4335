@@ -15,3 +15,11 @@ C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.csp
 C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CoreCompileInputs.cache
 C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.exe
 C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.dll
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.xml
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.ResolveComReference.cache
+C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335_Content.g.cs
+C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CopyComplete
