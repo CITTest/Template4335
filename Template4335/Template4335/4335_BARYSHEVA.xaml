@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template4335"
         mc:Ignorable="d"
-        Title="_4335_BARYSHEVA" Height="150" Width="200">
+        Title="_4335_BARYSHEVA" Height="212" Width="254">
     <Grid>
         <Label Content="АЛИНА" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top"/>
         <Label Content="17" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.441,1.795" Margin="0,80,0,0"/>
+        <Button Content="Импорт данных" HorizontalAlignment="Left" Margin="23,111,0,0" VerticalAlignment="Top"/>
+        <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
