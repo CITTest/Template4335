@@ -10,8 +10,8 @@
         <Label Content="Антипова Екатерина 19 лет" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,0.518"/>
         <Button Content="Импорт данных" HorizontalAlignment="Left" Margin="239,235,0,0" VerticalAlignment="Top" Height="33" Width="106" Click="Button_Click"/>
         <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="445,235,0,0" VerticalAlignment="Top" Height="33" Width="106" Click="Button_Click_1"/>
-        <Button Content="Импорт JSON данных" HorizontalAlignment="Left" Margin="239,298,0,0" VerticalAlignment="Top" Height="33" Width="106" Click="Button_Click"/>
-        <Button Content="Экспорт в Word" HorizontalAlignment="Left" Margin="445,298,0,0" VerticalAlignment="Top" Height="33" Width="106" Click="Button_Click_1"/>
+        <Button Content="Импорт JSON данных" HorizontalAlignment="Left" Margin="239,298,0,0" VerticalAlignment="Top" Height="33" Width="106" Click="Button_Click_2"/>
+        <Button Content="Экспорт в Word" HorizontalAlignment="Left" Margin="445,298,0,0" VerticalAlignment="Top" Height="33" Width="106" Click="Button_Click_3"/>
 
     </Grid>
 </Window>

@@ -125,6 +125,21 @@ namespace Template4335
                 }
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e) // импорт json
+        {
+            OpenFileDialog ofd = new OpenFileDialog()
+            {
+                DefaultExt = "*.json",
+                Filter = "JSON файлы (*.json)|*.json",
+                Title = "Выберите JSON файл для импорта данных"
+            };
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e) // экспорт word
+        {
+
+        }
     }
    
 }
