@@ -15,6 +15,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Text.Json;
+using System.IO;
+using System.Data.Entity.Validation;
+using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Data.Entity;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Template4335
 {
@@ -135,6 +142,26 @@ namespace Template4335
                 Filter = "JSON файлы (*.json)|*.json",
                 Title = "Выберите JSON файл для импорта данных"
             };
+            if (ofd.ShowDialog() == true)
+            {
+                try
+                {
+                    string jsonText = File.ReadAllText(ofd.FileName);
+                    List<Users> usersData = JsonConvert.DeserializeObject<List<Users>>(jsonText);
+
+                    using (isrpoEntities2 usersEntities = new isrpoEntities2())
+                    {
+                        usersEntities.Users.AddRange(usersData);
+                        usersEntities.SaveChanges();
+                    }
+
+                    MessageBox.Show("Данные успешно импортированы из JSON файла и сохранены в базе данных.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Произошла ошибка при импорте данных из JSON файла: {ex.Message}");
+                }
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e) // экспорт word
