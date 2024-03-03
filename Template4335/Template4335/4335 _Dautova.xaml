@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Template4335"
         mc:Ignorable="d"
         Title="_4335__Dautova" Height="450" Width="800">
-    <Grid>
+    <Grid Height="450" Width="800">
         <TextBlock FontSize="40"> Dilyara, 18</TextBlock>
         <Button x:Name="BnImport" Click="BnImport_Click" Width="90" Height="50">Импорт данных</Button>
-        <Button x:Name="BnExport" Click="BnExport_Click" Margin="356,256,354,128" Width="90" Height="50">Экспорт в Excel</Button>
+        <Button x:Name="BnExport" Click="BnExport_Click" Margin="338,144,342,256" Width="120" Height="50">Экспорт в Excel</Button>
     </Grid>
 </Window>
