@@ -22,6 +22,7 @@ using System.Security.Cryptography;
 using System.Data.Entity;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace Template4335
 {
@@ -136,23 +137,23 @@ namespace Template4335
 
         private void Button_Click_2(object sender, RoutedEventArgs e) // импорт json
         {
-            OpenFileDialog ofd = new OpenFileDialog()
+            OpenFileDialog ofd = new OpenFileDialog() // Открытие диалогового окна для выбора JSON-файла для импорта данных
             {
                 DefaultExt = "*.json",
                 Filter = "JSON файлы (*.json)|*.json",
                 Title = "Выберите JSON файл для импорта данных"
             };
-            if (ofd.ShowDialog() == true)
+            if (ofd.ShowDialog() == true) // Проверка, был ли выбран файл и нажата кнопка "ОК"
             {
                 try
                 {
-                    string jsonText = File.ReadAllText(ofd.FileName);
-                    List<Users> usersData = JsonConvert.DeserializeObject<List<Users>>(jsonText);
+                    string jsonText = File.ReadAllText(ofd.FileName); // Чтение текста из выбранного JSON-файла
+                    List<Users> usersData = JsonConvert.DeserializeObject<List<Users>>(jsonText); // Десериализация JSON-текста в список объектов Users
 
-                    using (isrpoEntities2 usersEntities = new isrpoEntities2())
+                    using (isrpoEntities2 usersEntities = new isrpoEntities2())   // Создание нового контекста базы данных
                     {
-                        usersEntities.Users.AddRange(usersData);
-                        usersEntities.SaveChanges();
+                        usersEntities.Users.AddRange(usersData);  // Добавление данных из JSON в базу данных
+                        usersEntities.SaveChanges(); // Сохранение изменений в базе данных
                     }
 
                     MessageBox.Show("Данные успешно импортированы из JSON файла и сохранены в базе данных.");
@@ -166,6 +167,42 @@ namespace Template4335
 
         private void Button_Click_3(object sender, RoutedEventArgs e) // экспорт word
         {
+            // Открытие диалогового окна для выбора JSON-файла для экспорта данных
+            OpenFileDialog ofd = new OpenFileDialog()
+            {
+                DefaultExt = "*.json",
+                Filter = "JSON файлы (*.json)|*.json",
+                Title = "Выберите JSON файл для экспорта данных"
+            };
+
+            if (ofd.ShowDialog() == true) // Проверка, был ли выбран файл и нажата кнопка "ОК"
+            {
+                // Чтение данных из JSON файла
+                string json = File.ReadAllText(ofd.FileName);
+                List<Users> users = System.Text.Json.JsonSerializer.Deserialize<List<Users>>(json);  // Десериализация JSON-данных в список объектов Users
+
+                // Отсортировать данные по возрастанию стоимости услуг
+                var sortedUsers = users.OrderBy(u => u.Stoimost);
+
+                // Создание нового документа Word
+                Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
+                Microsoft.Office.Interop.Word.Document doc = app.Documents.Add();
+
+
+                // Добавление отсортированных данных в документ Word
+                foreach (var user in sortedUsers)
+                {
+                    Microsoft.Office.Interop.Word.Paragraph para = doc.Content.Paragraphs.Add();
+                    // Добавление информации о каждом пользователе в документ Word
+                    para.Range.Text = $"Id: {user.Id}\nНазвание услуги: {user.NaimeovanieUslugi}\nСтоимость: {user.Stoimost}\n";
+                }
+
+                // Сохранение документа Word
+                doc.SaveAs2(@"D:\isrpo\sorted_output.docx");
+                doc.Close();
+                app.Quit();
+                MessageBox.Show("Данные были экспортированы в документ Word и отсортированы по стоимости услуг");
+            }
 
         }
     }
