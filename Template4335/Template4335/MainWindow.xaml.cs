@@ -24,5 +24,11 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void Antipova_Ekaterina_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Antipova_Ekaterina_4335 antipova4335 = new Antipova_Ekaterina_4335();
+            antipova4335.Show();
+        }
     }
 }
