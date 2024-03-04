@@ -30,8 +30,7 @@ namespace Template4335
             InitializeComponent();
         }
 
-        private void BnImport_Click(object sender,
-        RoutedEventArgs e)
+        private void BnImport_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog()
             {
@@ -42,20 +41,24 @@ namespace Template4335
             if (!(ofd.ShowDialog() == true))
                 return;
 
+            // Объявление переменных и открытие файла Excel
             string[,] list;
             Excel.Application ObjWorkExcel = new Excel.Application();
             Excel.Workbook ObjWorkBook = ObjWorkExcel.Workbooks.Open(ofd.FileName);
-            Excel.Worksheet ObjWorkSheet = (Excel.Worksheet)ObjWorkBook.Sheets[1];
-            var lastCell = ObjWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell);
-            int _columns = (int)lastCell.Column;
-            int _rows = (int)lastCell.Row;
+            Excel.Worksheet ObjWorkSheet = (Excel.Worksheet)ObjWorkBook.Sheets[1];// Получаем доступ к первому листу в книге
+            var lastCell = ObjWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell);// Находим последнюю заполненную ячейку на листе
+            int _columns = (int)lastCell.Column;// Получаем количество столбцов, равное номеру последней заполненной ячейки в строке
+            int _rows = (int)lastCell.Row; // Получаем количество строк, равное номеру последней заполненной ячейки в столбце
             list = new string[_rows, _columns];
-            for (int j = 0; j < _columns; j++)
+
+            for (int j = 0; j < _columns; j++) // Заполнение массива данными из файла Excel
                 for (int i = 0; i < _rows; i++)
                     list[i, j] = ObjWorkSheet.Cells[i + 1, j + 1].Text;
-            ObjWorkBook.Close(false, Type.Missing, Type.Missing);
-            ObjWorkExcel.Quit();
-            GC.Collect();
+
+            // Закрытие файла Excel
+            ObjWorkBook.Close(false, Type.Missing, Type.Missing);// Закрытие рабочей книги без сохранения изменений           
+            ObjWorkExcel.Quit();// Закрытие Excel 
+            GC.Collect();// Очистка неуправляемых ресурсов для уменьшения нагрузки на систему
 
             using (EmplEntities usersEntities = new EmplEntities())
             {
@@ -89,7 +92,7 @@ namespace Template4335
             using (EmplEntities emplEntities = new EmplEntities())
             {
                 var employees = emplEntities.Employees.OrderBy(E => E.Role).ToList(); //списка всех сотрудников, отсортированных по роли
-                var groupedEmployees = employees.GroupBy(E => E.Role);
+                var groupedEmployees = employees.GroupBy(E => E.Role);// Группируем сотрудников по их ролям
 
                 var app = new Excel.Application();
                 app.SheetsInNewWorkbook = groupedEmployees.Count();
@@ -125,9 +128,19 @@ namespace Template4335
                     workbook.SaveAs(sfd.FileName);
                     workbook.Close();
                     app.Quit();
-                    MessageBox.Show("Данные успешно экспортированы.");
+                    MessageBox.Show("успешно");
                 }
             }
+        }
+
+        private void BnImport_JSON_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BnExport_JSON_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

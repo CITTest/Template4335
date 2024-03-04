@@ -9,6 +9,7 @@
     <Grid Height="450" Width="800">
         <TextBlock FontSize="40"> Dilyara, 18</TextBlock>
         <Button x:Name="BnImport" Click="BnImport_Click" Width="90" Height="50">Импорт данных</Button>
-        <Button x:Name="BnExport" Click="BnExport_Click" Margin="338,144,342,256" Width="120" Height="50">Экспорт в Excel</Button>
+        <Button x:Name="BnExport" Click="BnExport_Click" Margin="338,144,342,256" Width="120" Height="50">Экспорт в Excel</Button>        <Button x:Name="BnImport_JSON" Click="BnImport_JSON_Click" Width="150" Height="50" Margin="101,144,549,256">Импорт данных - JSON</Button>
+        <Button x:Name="BnExport_JSON" Click="BnExport_JSON_Click"  Width="120" Height="50" Margin="133,210,547,190">Экспорт в JSON</Button>
     </Grid>
 </Window>
