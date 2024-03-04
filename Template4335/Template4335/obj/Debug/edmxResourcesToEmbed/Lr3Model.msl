@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище vtorModelContainer" CdmEntityContainer="vtorEntities1">
+    <EntitySetMapping Name="Uslugi">
+      <EntityTypeMapping TypeName="vtorModel.Uslugi">
+        <MappingFragment StoreEntitySet="Uslugi">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodeZakaz" ColumnName="CodeZakaz" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TimeZakaz" ColumnName="TimeZakaz" />
+          <ScalarProperty Name="CodeClient" ColumnName="CodeClient" />
+          <ScalarProperty Name="Uslugi1" ColumnName="Uslugi" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateOff" ColumnName="DateOff" />
+          <ScalarProperty Name="TimeProkat" ColumnName="TimeProkat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
