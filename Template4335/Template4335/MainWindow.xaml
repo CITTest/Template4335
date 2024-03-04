@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="400" MinHeight="800" MinWidth="400">
     <Grid>
+                <Button Content="Информ" Click="B" Grid.Row="10" Background="ForestGreen" FontSize="20"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -17,7 +18,8 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*">
+            </RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Template4335
 {
@@ -23,6 +24,13 @@ namespace Template4335
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void B(object sender, RoutedEventArgs e)
+        {
+            _4335__Dautova m  =new _4335__Dautova();
+            m.Show();
+            Close();
         }
     }
 }
