@@ -33,11 +33,10 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
 
         </Grid.RowDefinitions>
-
+        <Button Content="Информация об авторе" Click="ShowAuthorInfo" Grid.Row="6"/>
     </Grid>
 </Window>

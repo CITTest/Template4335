@@ -1,0 +1,17 @@
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.AssemblyReference.cache
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\MainWindow.g.cs
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\RafailBashirov.g.cs
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\App.g.cs
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335_MarkupCompile.cache
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335_MarkupCompile.lref
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\bin\Debug\Template4335.exe.config
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\bin\Debug\Template4335.exe
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\bin\Debug\Template4335.pdb
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\MainWindow.baml
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\RafailBashirov.baml
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335.g.resources
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335.Properties.Resources.resources
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.GenerateResource.cache
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CoreCompileInputs.cache
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335.exe
+C:\Users\rafai\OneDrive\Desktop\isrpo_pro_max\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
