@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище secondModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "second.dbo.Users" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Log" />
+      <PropertyRef Name="Pass" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Log" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище secondModelContainer">
+    <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Users].[Id] AS [Id], 
+    [Users].[Log] AS [Log], 
+    [Users].[Pass] AS [Pass]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

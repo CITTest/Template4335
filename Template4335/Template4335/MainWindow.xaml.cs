@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Template4335
@@ -28,10 +27,6 @@ namespace Template4335
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void group_4335(object sender, RoutedEventArgs e)
-        {
             Nigametyanova4335 nigametyanova4335 = new Nigametyanova4335();
             nigametyanova4335.Show();
         }

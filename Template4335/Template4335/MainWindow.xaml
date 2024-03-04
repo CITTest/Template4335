@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template4335"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="400" MinHeight="800" MinWidth="400">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -38,6 +38,6 @@
             <RowDefinition Height="*"></RowDefinition>
 
         </Grid.RowDefinitions>
-        <Button Grid.Row="13" Click="group_4335"> Нигаметьянова Аделя,19 </Button>
+        <Button Grid.Row="13" Click="Button_Click">Нигаметьянова аделя 19 лет</Button>
     </Grid>
 </Window>
