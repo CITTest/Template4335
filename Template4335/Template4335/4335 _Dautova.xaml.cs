@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,6 +18,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Text.Json;
+using System.IO;
+using Newtonsoft.Json;
+using Microsoft.Office.Interop.Word;
 
 namespace Template4335
 {
@@ -135,11 +140,75 @@ namespace Template4335
 
         private void BnImport_JSON_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog()
+            {
+                DefaultExt = "*..json",
+                Filter = "файл json (5.json)|*.json",
+                Title = "Выберите файл базы данных"
+            };
 
+            if (ofd.ShowDialog() == true) // Проверка, был ли выбран файл и нажата кнопка "ОК"
+            {
+                string jsonText = File.ReadAllText(ofd.FileName);
+                List<Employee> employees = JsonConvert.DeserializeObject<List<Employee>>(jsonText);
+
+                using (EmplEntities usersEntities = new EmplEntities())
+                {
+                    foreach (Employee emp in employees)
+                    {
+
+                        usersEntities.Employees.Add(emp);
+                    }
+                    usersEntities.SaveChanges();
+                    MessageBox.Show("Данные успешно сохранены в базу данных");
+                }
+            }
+            else MessageBox.Show("ошибка");
         }
 
         private void BnExport_JSON_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog()
+            {
+                DefaultExt = "docx",
+                Filter = "Файл Word (*.docx)|*.docx",
+                Title = "Сохранить данные в файл"
+            };
+
+            if (sfd.ShowDialog() == true) // Проверка, был ли выбран файл и нажата кнопка "ОК"
+            {
+                using (EmplEntities emplEntities = new EmplEntities())
+                {
+                    var employees = emplEntities.Employees.OrderBy(E => E.Role).ToList();
+                    var groupedEmployees = employees.GroupBy(E => E.Role);
+
+                    Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+                    Document doc = wordApp.Documents.Add();
+
+                    foreach (var group in groupedEmployees)
+                    {
+                        Microsoft.Office.Interop.Word.Paragraph paragraph = doc.Paragraphs.Add();
+                        paragraph.Range.Text = group.Key;
+                        Microsoft.Office.Interop.Word.Table table = doc.Tables.Add(paragraph.Range, group.Count() + 1, 2);
+                        table.Cell(1, 1).Range.Text = "Login";
+                        table.Cell(1, 2).Range.Text = "Password";
+
+                        int rowIndex = 2;
+                        foreach (var employee in group)
+                        {
+                            table.Cell(rowIndex, 1).Range.Text = employee.Login;
+                            table.Cell(rowIndex, 2).Range.Text = HashPassword(employee.Pass);
+                            rowIndex++;
+                        }
+                        doc.Words.Last.InsertBreak(WdBreakType.wdPageBreak);
+                    }
+
+                    doc.SaveAs2(sfd.FileName);
+                    doc.Close();
+                    wordApp.Quit();
+                    MessageBox.Show("успешно");
+                }
+            }
 
         }
     }
