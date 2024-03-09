@@ -24,3 +24,6 @@ D:\zad4\MartTask4\Template4335\Template4335\Template4335\obj\Debug\Template4335.
 D:\zad4\MartTask4\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
 D:\zad4\MartTask4\Template4335\Template4335\Template4335\obj\Debug\mainwindow.g.cs
 D:\zad4\MartTask4\Template4335\Template4335\Template4335\obj\Debug\mainwindow.baml
+D:\zad4\MartTask4\Template4335\Template4335\Template4335\bin\Debug\Newtonsoft.Json.dll
+D:\zad4\MartTask4\Template4335\Template4335\Template4335\bin\Debug\Newtonsoft.Json.xml
+D:\zad4\MartTask4\Template4335\Template4335\Template4335\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

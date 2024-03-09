@@ -14,6 +14,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+using Word = Microsoft.Office.Interop.Word;
+
 
 
 
@@ -95,7 +99,7 @@ namespace Template4335
                 worksheet.Cells[2][startRowIndex] = "Код заказа";
                 worksheet.Cells[3][startRowIndex] = "Код клиента";
                 worksheet.Cells[4][startRowIndex] = "Услуги";
-                
+
                 startRowIndex++;
                 var servicesCategories = allUsl.GroupBy(s => s.Date).ToList();
                 foreach (var services in servicesCategories)
@@ -110,7 +114,7 @@ namespace Template4335
                                 worksheet.Cells[2][startRowIndex] = service.CodeZakaz;
                                 worksheet.Cells[3][startRowIndex] = service.CodeClient;
                                 worksheet.Cells[4][startRowIndex] = service.Uslugi1;
-              
+
                                 startRowIndex++;
                             }
                         }
@@ -124,10 +128,152 @@ namespace Template4335
             }
             app.Visible = true;
         }
+
+        private void Bnlb5(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog()
+            {
+                DefaultExt = "*.json",
+                Filter = "JSON файлы (*.json)|*.json",
+                Title = "Выберите файл JSON для импорта данных"
+            };
+
+            if (ofd.ShowDialog() == true)
+            {
+                try
+                {
+                    string jsonContent = File.ReadAllText(ofd.FileName);
+                    List<MyDataModel> data = JsonConvert.DeserializeObject<List<MyDataModel>>(jsonContent);
+
+                    using (vtorEntities1 vtorEntities = new vtorEntities1())
+                    {
+                        foreach (var item in data)
+                        {
+                            Uslugi uslugi = new Uslugi();
+                            uslugi.Id = item.Id;
+                            uslugi.CodeZakaz = item.CodeOrder;
+                            uslugi.Date = item.CreateDate;
+                            uslugi.TimeZakaz = item.CreateTime;
+                            uslugi.CodeClient = item.CodeClient;
+                            uslugi.Uslugi1 = item.Services;
+                            uslugi.Status = item.Status;
+                            uslugi.DateOff = item.ClosedDate;
+                            uslugi.TimeProkat = item.ProkatTime;
+                            vtorEntities.Uslugi.Add(uslugi);
+                            // Продолжайте заполнение полей объекта Uslugi в соответствии с вашей моделью данных
+
+                            vtorEntities.Uslugi.Add(uslugi);
+                        }
+                        vtorEntities.SaveChanges();
+                        MessageBox.Show("Импорт данных из JSON файла успешно завершен.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при импорте данных: {ex.Message}");
+                }
+            }
+        }
+
+        // Модель данных для десериализации JSON
+        public class MyDataModel
+        {
+            public int Id { get; set; }
+            public string CodeOrder { get; set; }
+            public string CreateDate { get; set; }
+            public string CreateTime { get; set; }
+            public string CodeClient { get; set; }
+            public string Services { get; set; }
+            public string Status { get; set; }
+            public string ClosedDate { get; set; }
+            public string ProkatTime { get; set; }
+        }
+
+
+
+        private void Bnls5js(object sender, RoutedEventArgs e)
+        {
+            List<Uslugi> allusl;
+            List<string> allDate;
+            using (vtorEntities1 vtorEntities = new vtorEntities1())
+            {
+                allusl = vtorEntities.Uslugi.ToList();
+                allDate = vtorEntities.Uslugi.ToList().Select(s => s.Date).Distinct().ToList();
+                var app = new Word.Application();
+                Word.Document document = app.Documents.Add();
+                var servicesCategories = allusl.GroupBy(s => s.Date).ToList();
+                foreach (var group in servicesCategories)
+                {
+                    Word.Paragraph paragraph =
+                    document.Paragraphs.Add();
+                    Word.Range range = paragraph.Range;
+                    range.Text = Convert.ToString(allusl.Where(g =>
+g.Date == group.Key).FirstOrDefault().Uslugi1);
+paragraph.set_Style("Заголовок 1");
+range.InsertParagraphAfter();
+                    Word.Paragraph tableParagraph =
+document.Paragraphs.Add();
+                    Word.Range tableRange = tableParagraph.Range;
+                    Word.Table studentsTable =
+                    document.Tables.Add(tableRange, group.Count() + 1, 4);
+                    studentsTable.Borders.InsideLineStyle =
+                    studentsTable.Borders.OutsideLineStyle =
+                    Word.WdLineStyle.wdLineStyleSingle;
+                    studentsTable.Range.Cells.VerticalAlignment =
+                    Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                    Word.Range cellRange;
+                    cellRange = studentsTable.Cell(1, 1).Range;
+                    cellRange.Text = "ID";
+                    cellRange = studentsTable.Cell(1, 2).Range;
+                    cellRange.Text = "Код заказа";
+                    cellRange = studentsTable.Cell(1, 3).Range;
+                    cellRange.Text = "Код клиента";
+                    cellRange = studentsTable.Cell(1, 4).Range;
+                    cellRange.Text = "Услуги";
+                    studentsTable.Rows[1].Range.Bold = 1;
+                    studentsTable.Rows[1].Range.ParagraphFormat.Alignment =
+                    Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                    
+                    int i = 1;
+                    foreach (var currentStudent in group)
+                    {
+                        cellRange = studentsTable.Cell(i + 1, 1).Range;
+                        cellRange.Text = currentStudent.Id.ToString();
+                        cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
+                        cellRange = studentsTable.Cell(i + 1, 2).Range;
+                        cellRange.Text = currentStudent.CodeZakaz;
+                        cellRange.ParagraphFormat.Alignment =Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
+                        cellRange = studentsTable.Cell(i + 1, 3).Range;
+                        cellRange.Text = currentStudent.CodeClient;
+                        cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
+                        cellRange = studentsTable.Cell(i + 1, 4).Range;
+                        cellRange.Text = currentStudent.Uslugi1;
+                        cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                        i++;
+
+                        document.Words.Last.InsertBreak(Word.WdBreakType.wdPageBreak);
+                    }
+                    app.Visible = true;
+                    document.SaveAs2(@"D:\outputFileWord.docx");
+                    document.SaveAs2(@"D:\outputFilePdf.pdf",
+                    Word.WdExportFormat.wdExportFormatPDF);
+                }
+
+
+                }
+
+
+            }
+        }
     }
-    }
-
-       
 
 
-    
+
+
+
+
+
+
