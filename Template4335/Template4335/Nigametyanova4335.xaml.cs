@@ -208,7 +208,7 @@ namespace Template4335
                     document.Paragraphs.Add();
                     Word.Range range = paragraph.Range;
                     range.Text = Convert.ToString(allusl.Where(g =>
-g.Date == group.Key).FirstOrDefault().Uslugi1);
+g.Date == group.Key).FirstOrDefault().Date);
 paragraph.set_Style("Заголовок 1");
 range.InsertParagraphAfter();
                     Word.Paragraph tableParagraph =
