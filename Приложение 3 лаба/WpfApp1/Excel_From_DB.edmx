@@ -5,6 +5,19 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище Excel_LabModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Excel_Lab.dbo.Users" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Users">
+          <Property Name="Client_ID" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Date_Birth" Type="date" />
+          <Property Name="Index_" Type="int" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="Street" Type="nvarchar(max)" />
+          <Property Name="House" Type="int" />
+          <Property Name="Flat" Type="int" />
+          <Property Name="Email" Type="nvarchar(max)" />
+        </EntityType>-->
         <EntityContainer Name="Хранилище Excel_LabModelContainer" />
       </Schema>
     </edmx:StorageModels>

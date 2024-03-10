@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="900" MinHeight="550" MinWidth="900">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Импорт данных" x:Name="BtnImport" Click="BtnImport_Click" Height="40" Width="120" Margin="640,10,40,11"/>
+        <Button Content="Экспорт данных" x:Name="BtnExport" Click="BtnExport_Click" Height="40" Width="120" Margin="480,10,200,11"/>
+        <Button Content="Очистить" x:Name="BtnClear" Click="BtnClear_Click" Height="40" Width="120" Margin="50,18,730,18"/>
+        <DataGrid Grid.Row="1"/>
+
     </Grid>
 </Window>

@@ -161,8 +161,8 @@
   <ItemGroup>
     <Content Include="Excel_From_DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Excel_From_DB.Context.cs</LastGenOutput>
       <DependentUpon>Excel_From_DB.edmx</DependentUpon>
+      <LastGenOutput>Excel_From_DB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Excel_From_DB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
