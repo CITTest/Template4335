@@ -11,5 +11,7 @@
         <Label Content="17" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.441,1.795" Margin="0,80,0,0"/>
         <Button Content="Импорт данных" HorizontalAlignment="Left" Margin="23,111,0,0" VerticalAlignment="Top" x:Name="importButton" Click="importButton_Click"/>
         <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" x:Name="exportButton" Click="exportButton_Click"/>
+        <Button Content="Импорт JSON" HorizontalAlignment="Left" Margin="23,146,0,0" VerticalAlignment="Top" x:Name="importJSONButton" />
+        <Button Content="Экспорт в Word" HorizontalAlignment="Left" Margin="140,146,0,0" VerticalAlignment="Top" x:Name="exportWordButton" Click="exportButton_Click"/>
     </Grid>
 </Window>
