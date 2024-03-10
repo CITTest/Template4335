@@ -17,3 +17,10 @@ C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\obj\D
 C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\obj\Debug\Template4335.exe
 C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
 C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.ResolveComReference.cache
+C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.dll
+C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.xml
+C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\obj\Debug\Template4335_Content.g.cs
+C:\Users\лина\Desktop\test_repo\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CopyComplete

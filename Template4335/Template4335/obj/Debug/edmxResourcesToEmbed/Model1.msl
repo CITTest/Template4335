@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище orderszakaz2ModelContainer" CdmEntityContainer="orderszakaz2Entities">
+    <EntitySetMapping Name="ORDERS">
+      <EntityTypeMapping TypeName="orderszakaz2Model.ORDERS">
+        <MappingFragment StoreEntitySet="ORDERS">
+          <ScalarProperty Name="ZakazId" ColumnName="ZakazId" />
+          <ScalarProperty Name="ZakazCode" ColumnName="ZakazCode" />
+          <ScalarProperty Name="ZakazCreationDate" ColumnName="ZakazCreationDate" />
+          <ScalarProperty Name="ZakazTime" ColumnName="ZakazTime" />
+          <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+          <ScalarProperty Name="ZakazUslugi" ColumnName="ZakazUslugi" />
+          <ScalarProperty Name="ZakazStatus" ColumnName="ZakazStatus" />
+          <ScalarProperty Name="ZakazClosureDate" ColumnName="ZakazClosureDate" />
+          <ScalarProperty Name="ZakazProkatTime" ColumnName="ZakazProkatTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="_4335_BARYSHEVA" Height="212" Width="254">
     <Grid>
-        <Label Content="АЛИНА" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top"/>
+        <Label Content="АЛИНА" x:Name="label1" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top"/>
         <Label Content="17" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.441,1.795" Margin="0,80,0,0"/>
-        <Button Content="Импорт данных" HorizontalAlignment="Left" Margin="23,111,0,0" VerticalAlignment="Top"/>
-        <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top"/>
+        <Button Content="Импорт данных" HorizontalAlignment="Left" Margin="23,111,0,0" VerticalAlignment="Top" x:Name="importButton" Click="importButton_Click"/>
+        <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" x:Name="exportButton" Click="exportButton_Click"/>
     </Grid>
 </Window>
