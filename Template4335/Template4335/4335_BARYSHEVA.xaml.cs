@@ -1,4 +1,5 @@
 ﻿using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Word;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Text.RegularExpressions;
+using Word = Microsoft.Office.Interop.Word;
+using System.Text.Json;
+using System.IO;
+
 
 namespace Template4335
 {
@@ -154,6 +158,41 @@ namespace Template4335
 
         private void importJSONButton_Click(object sender, RoutedEventArgs e)
         {
+
+            OpenFileDialog ofd = new OpenFileDialog()
+            {
+                DefaultExt = "*.json",
+                Filter = "JSON файлы (*.json)|*.json",
+                Title = "Выберите файл JSON"
+            };
+            if (!(ofd.ShowDialog() == true))
+                return;
+
+            string jsonContent = File.ReadAllText(ofd.FileName);
+            List<ORDERS> dataList = JsonSerializer.Deserialize<List<ORDERS>>(jsonContent);
+
+            using (orderszakaz2Entities orderzakazEntities = new orderszakaz2Entities())
+            {
+                foreach (var data in dataList)
+                {
+                    ORDERS orders = new ORDERS();
+
+                        orders.ZakazId = data.ZakazId;
+                        orders.ZakazCode = data.ZakazCode;
+                        orders.ZakazCreationDate = data.ZakazCreationDate;
+                        orders.ZakazTime = data.ZakazTime;
+                        orders.ClientCode = data.ClientCode;
+                        orders.ZakazUslugi = data.ZakazUslugi;
+                        orders.ZakazStatus = data.ZakazStatus;
+                        orders.ZakazClosureDate = data.ZakazClosureDate;
+                        orders.ZakazProkatTime = data.ZakazProkatTime;
+
+                    orderzakazEntities.ORDERS.Add(orders);
+                }
+
+                orderzakazEntities.SaveChanges();
+                MessageBox.Show("Импорт данных из JSON прошел успешно");
+            }
 
         }
 

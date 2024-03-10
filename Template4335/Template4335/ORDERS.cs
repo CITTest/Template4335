@@ -11,17 +11,26 @@ namespace Template4335
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Text.Json.Serialization;
     public partial class ORDERS
     {
+        [JsonPropertyName("Id")]
         public int ZakazId { get; set; }
+        [JsonPropertyName("CodeOrder")]
         public string ZakazCode { get; set; }
+        [JsonPropertyName("CreateDate")]
         public string ZakazCreationDate { get; set; }
+        [JsonPropertyName("CreateTime")]
         public string ZakazTime { get; set; }
+        [JsonPropertyName("CodeClient")]
         public string ClientCode { get; set; }
+        [JsonPropertyName("Services")]
         public string ZakazUslugi { get; set; }
+        [JsonPropertyName("Status")]
         public string ZakazStatus { get; set; }
+        [JsonPropertyName("ClosedDate")]
         public string ZakazClosureDate { get; set; }
+        [JsonPropertyName("ProkatTime")]
         public string ZakazProkatTime { get; set; }
     }
 }
