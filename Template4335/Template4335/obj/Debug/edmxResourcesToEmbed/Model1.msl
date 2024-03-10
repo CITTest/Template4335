@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="importisrpo2ModelStoreContainer" CdmEntityContainer="importisrpo2Entities1">
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="importisrpo2Model.Worker">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="id_worker" ColumnName="id_worker" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="lastenter" ColumnName="lastenter" />
+          <ScalarProperty Name="entertype" ColumnName="entertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

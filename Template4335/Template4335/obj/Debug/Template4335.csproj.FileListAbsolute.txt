@@ -15,3 +15,34 @@ C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\obj\Deb
 C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CoreCompileInputs.cache
 C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.exe
 C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\Template4335.exe.config
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\Template4335.exe
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\Template4335.pdb
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.AssemblyReference.cache
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.ResolveComReference.cache
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Khasanshin4335.g.cs
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\MainWindow.g.cs
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\App.g.cs
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335_MarkupCompile.cache
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335_MarkupCompile.lref
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Khasanshin4335.baml
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\MainWindow.baml
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.g.resources
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.Properties.Resources.resources
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.GenerateResource.cache
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CoreCompileInputs.cache
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.exe
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.pdb
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.dll
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.xml
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335_Content.g.cs
+C:\Users\work\Desktop\KAI лабы практики и тд\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CopyComplete
+C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.dll
+C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.xml
+C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.ResolveComReference.cache
+C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335_Content.g.cs
+C:\Users\work\Desktop\irspo1_test\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CopyComplete

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="importisrpo2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="id_worker" />
+    </Key>
+    <Property Name="id_worker" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="fio" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="lastenter" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="entertype" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="importisrpo2ModelStoreContainer">
+    <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
