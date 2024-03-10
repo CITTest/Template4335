@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="orderszakaz2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ORDERS">
+    <Key>
+      <PropertyRef Name="ZakazId" />
+    </Key>
+    <Property Name="ZakazId" Type="Int32" Nullable="false" />
+    <Property Name="ZakazCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazCreationDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ClientCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazUslugi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazClosureDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazProkatTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="orderszakaz2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ORDERS" EntityType="Self.ORDERS" />
+  </EntityContainer>
+</Schema>

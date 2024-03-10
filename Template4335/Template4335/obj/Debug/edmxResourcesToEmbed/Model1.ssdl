@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище orderszakaz2Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ORDERS">
+    <Key>
+      <PropertyRef Name="ZakazId" />
+    </Key>
+    <Property Name="ZakazId" Type="int" Nullable="false" />
+    <Property Name="ZakazCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZakazCreationDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZakazTime" Type="nvarchar" MaxLength="30" />
+    <Property Name="ClientCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZakazUslugi" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZakazStatus" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZakazClosureDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZakazProkatTime" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityContainer Name="Хранилище orderszakaz2ModelContainer">
+    <EntitySet Name="ORDERS" EntityType="Self.ORDERS" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

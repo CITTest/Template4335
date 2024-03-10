@@ -24,5 +24,11 @@ namespace Template4335
         {
             InitializeComponent();
         }
+
+        private void _4335_Barysheva_Click(object sender, RoutedEventArgs e)
+        {
+            _4335_BARYSHEVA window = new _4335_BARYSHEVA();
+            window.Show();
+        }
     }
 }
