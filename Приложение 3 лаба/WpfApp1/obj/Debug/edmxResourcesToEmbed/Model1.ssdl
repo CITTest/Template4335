@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ExcelLabModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ExcelLab.dbo.Users" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Client_ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Date_Birth" />
+      <PropertyRef Name="Index_" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Street" />
+      <PropertyRef Name="House" />
+      <PropertyRef Name="Flat" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Client_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date_Birth" Type="datetime" Nullable="false" />
+    <Property Name="Index_" Type="int" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="House" Type="int" Nullable="false" />
+    <Property Name="Flat" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище ExcelLabModelContainer">
+    <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Users].[Client_ID] AS [Client_ID], 
+    [Users].[Name] AS [Name], 
+    [Users].[Date_Birth] AS [Date_Birth], 
+    [Users].[Index_] AS [Index_], 
+    [Users].[City] AS [City], 
+    [Users].[Street] AS [Street], 
+    [Users].[House] AS [House], 
+    [Users].[Flat] AS [Flat], 
+    [Users].[Email] AS [Email]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
