@@ -19,6 +19,8 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 using System.Text.Json;
 using System.IO;
+using System.Xml.Linq;
+using System.Xaml;
 
 
 namespace Template4335
@@ -177,15 +179,15 @@ namespace Template4335
                 {
                     ORDERS orders = new ORDERS();
 
-                        orders.ZakazId = data.ZakazId;
-                        orders.ZakazCode = data.ZakazCode;
-                        orders.ZakazCreationDate = data.ZakazCreationDate;
-                        orders.ZakazTime = data.ZakazTime;
-                        orders.ClientCode = data.ClientCode;
-                        orders.ZakazUslugi = data.ZakazUslugi;
-                        orders.ZakazStatus = data.ZakazStatus;
-                        orders.ZakazClosureDate = data.ZakazClosureDate;
-                        orders.ZakazProkatTime = data.ZakazProkatTime;
+                    orders.ZakazId = data.ZakazId;
+                    orders.ZakazCode = data.ZakazCode;
+                    orders.ZakazCreationDate = data.ZakazCreationDate;
+                    orders.ZakazTime = data.ZakazTime;
+                    orders.ClientCode = data.ClientCode;
+                    orders.ZakazUslugi = data.ZakazUslugi;
+                    orders.ZakazStatus = data.ZakazStatus;
+                    orders.ZakazClosureDate = data.ZakazClosureDate;
+                    orders.ZakazProkatTime = data.ZakazProkatTime;
 
                     orderzakazEntities.ORDERS.Add(orders);
                 }
@@ -198,8 +200,82 @@ namespace Template4335
 
         private void exportWordButton_Click(object sender, RoutedEventArgs e)
         {
+            List<ORDERS> allOrders;
+            List<string> allTimeProkats;
+            using (orderszakaz2Entities orderzakazEntities = new orderszakaz2Entities())
+            {
+                allOrders = orderzakazEntities.ORDERS.ToList();
+                allTimeProkats = orderzakazEntities.ORDERS.Select(o => o.ZakazProkatTime).Distinct().ToList();
+                var ordersCategories = allOrders.GroupBy(s => s.ZakazProkatTime).ToList();
 
+                var app = new Word.Application();
+                Word.Document document = app.Documents.Add();
+
+                DateTime firstOrderDate = allOrders.Min(o => DateTime.Parse(o.ZakazCreationDate));
+                DateTime lastOrderDate = allOrders.Max(o => DateTime.Parse(o.ZakazCreationDate));
+
+                int i =  0;
+                foreach (var timeProkat in ordersCategories)
+                {
+                    Word.Paragraph paragraph = document.Paragraphs.Add();
+                    Word.Range range = paragraph.Range;
+
+                    range.Text = Convert.ToString(allTimeProkats.Where(t => t == timeProkat.Key).FirstOrDefault());
+
+                    paragraph.set_Style("Заголовок 1");
+                    range.InsertParagraphAfter();
+
+                    Word.Paragraph tableParagraph = document.Paragraphs.Add();
+                    Word.Range tableRange = tableParagraph.Range;
+                    Word.Table ordersTable = document.Tables.Add(tableRange, timeProkat.Count() + 1, 5);
+                    ordersTable.Borders.InsideLineStyle = ordersTable.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+                    ordersTable.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                    i++;
+
+                    Word.Range cellRange;
+                    cellRange = ordersTable.Cell(1, 1).Range;
+                    cellRange.Text = "Id";
+                    cellRange = ordersTable.Cell(1, 2).Range;
+                    cellRange.Text = "Код заказа";
+                    cellRange = ordersTable.Cell(1, 3).Range;
+                    cellRange.Text = "Дата создания";
+                    cellRange = ordersTable.Cell(1, 4).Range;
+                    cellRange.Text = "Код клиента";
+                    cellRange = ordersTable.Cell(1, 5).Range;
+                    cellRange.Text = "Услуги";
+                    ordersTable.Rows[1].Range.Bold = 1;
+                    ordersTable.Rows[1].Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
+                    int j = 1;
+                    foreach (var currentOrder in timeProkat)
+                    {
+                        cellRange = ordersTable.Cell(j + 1, 1).Range;
+                        cellRange.Text = currentOrder.ZakazId.ToString();
+                        cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                        cellRange = ordersTable.Cell(j + 1, 2).Range;
+                        cellRange.Text = currentOrder.ZakazCode;
+                        cellRange = ordersTable.Cell(j + 1, 3).Range;
+                        cellRange.Text = currentOrder.ZakazCreationDate;
+                        cellRange = ordersTable.Cell(j + 1, 4).Range;
+                        cellRange.Text = currentOrder.ClientCode;
+                        cellRange = ordersTable.Cell(j + 1, 5).Range;
+                        cellRange.Text = currentOrder.ZakazUslugi;
+                        cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                        j++;
+                    }
+
+                    document.Words.Last.InsertBreak(Word.WdBreakType.wdPageBreak);
+                }
+
+                Word.Paragraph overallDatesParagraph = document.Paragraphs.Add();
+                overallDatesParagraph.Range.Text = $"Дата первого заказа: {firstOrderDate.ToShortDateString()}, Дата последнего заказа: {lastOrderDate.ToShortDateString()}";
+                overallDatesParagraph.Format.SpaceAfter = 12;
+                overallDatesParagraph.Range.InsertParagraphAfter();
+
+                app.Visible = true;
+
+            }
         }
     }
 }
-
