@@ -14,10 +14,10 @@ namespace Template4335
     
     public partial class Services
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public string Code { get; set; }
+        public int IdServices { get; set; }
+        public string NameServices { get; set; }
+        public string TypeOfService { get; set; }
+        public string CodeService { get; set; }
         public int Cost { get; set; }
     }
 }

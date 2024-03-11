@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LR3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="IdServices" />
+    </Key>
+    <Property Name="IdServices" Type="Int32" Nullable="false" />
+    <Property Name="NameServices" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeOfService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cost" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="LR3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Services" EntityType="Self.Services" />
+  </EntityContainer>
+</Schema>

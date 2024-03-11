@@ -23,3 +23,6 @@ C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\ru\EntityFramewo
 C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.ResolveComReference.cache
 C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335_Content.g.cs
 C:\Users\Honor\Template4335\Template4335\Template4335\obj\Debug\Template4335.csproj.CopyComplete
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Honor\Template4335\Template4335\Template4335\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

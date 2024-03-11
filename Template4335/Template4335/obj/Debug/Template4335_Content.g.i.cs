@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lr3model.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lr3model.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.tt")]
 
 

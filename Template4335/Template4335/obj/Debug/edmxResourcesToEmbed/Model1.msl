@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище LR3ModelContainer" CdmEntityContainer="LR3Entities">
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="LR3Model.Services">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="IdServices" ColumnName="IdServices" />
+          <ScalarProperty Name="NameServices" ColumnName="NameServices" />
+          <ScalarProperty Name="TypeOfService" ColumnName="TypeOfService" />
+          <ScalarProperty Name="CodeService" ColumnName="CodeService" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

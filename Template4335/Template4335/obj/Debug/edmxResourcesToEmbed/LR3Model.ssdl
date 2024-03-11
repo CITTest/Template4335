@@ -2,12 +2,12 @@
 <Schema Namespace="Хранилище LR3Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Services">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="IdService" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdService" Type="int" Nullable="false" />
+    <Property Name="NameServices" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeOfService" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeService" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Cost" Type="int" Nullable="false" />
   </EntityType>
   <EntityContainer Name="Хранилище LR3ModelContainer">

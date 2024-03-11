@@ -4,10 +4,10 @@
     <EntitySetMapping Name="Services">
       <EntityTypeMapping TypeName="LR3Model.Services">
         <MappingFragment StoreEntitySet="Services">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CodeService" ColumnName="CodeService" />
+          <ScalarProperty Name="TypeOfService" ColumnName="TypeOfService" />
+          <ScalarProperty Name="NameServices" ColumnName="NameServices" />
+          <ScalarProperty Name="IdService" ColumnName="IdService" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
         </MappingFragment>
       </EntityTypeMapping>
