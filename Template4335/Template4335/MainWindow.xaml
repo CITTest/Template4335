@@ -38,6 +38,6 @@
             <RowDefinition Height="*"></RowDefinition>
 
         </Grid.RowDefinitions>
-
+        <Button Click="Button_Click" Grid.Row="10" >Исхакова</Button>
     </Grid>
 </Window>
