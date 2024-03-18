@@ -8,6 +8,7 @@
         Title="_4335_Fazlieva" Height="450" Width="800">
     <StackPanel>
         <Label>Фазлиева Зиля 18 лет</Label>
-        <Button x:Name="BnImport" Click="BnImport_Click" Margin="20">Импорт данных</Button>        <Button x:Name="BnExport" Click="BnExport_Click">Экспорт в Excel</Button>
+        <Button x:Name="BnImport" Click="BnImport_Click" Margin="10">Импорт данных</Button>        <Button x:Name="BnExport" Click="BnExport_Click" Margin="10">Экспорт в Excel</Button>        <Button Margin="10" x:Name="BnImportJson" Click="BnImportJson_Click" >Импорт JSON данных</Button>
+        <Button Margin="10" x:Name="BnExportWord" Click="BnExportWord_Click" >Экспорт в Word</Button>
     </StackPanel>
 </Window>
