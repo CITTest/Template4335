@@ -1,10 +1,12 @@
 ﻿using System;
 using Microsoft.Win32;
 using System.Windows;
+using System.Linq;
 using System.Globalization;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 using Excel = Microsoft.Office.Interop.Excel;
-
+using System.ComponentModel;
 
 namespace WpfApp1
 {
@@ -48,7 +50,7 @@ namespace WpfApp1
                 {
                     for (int i = 1; i < 70; i++)
                     {
-                        excelEntities.Users.Add(new User()
+                        excelEntities.Users.Add(new Users()
                         {
                             Client_ID = Convert.ToInt32(list[i, 0]),
                             Name = list[i, 1],
@@ -67,14 +69,62 @@ namespace WpfApp1
             }
         }
 
-        private void BtnExport_Click(object sender, RoutedEventArgs e)
+        public int DateTimeConvert(string Date_Birth)
         {
-
+            var dateOfBirth = DateTime.ParseExact(Date_Birth, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            var currentAge = DateTime.Now.Year - dateOfBirth.Year;
+            if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
+                currentAge++;
+            return currentAge;
         }
 
-        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        private void BtnExport_Click(object sender, RoutedEventArgs e)
         {
-
+            List<Users> allEntities;
+            List<string> allType = new List<string>() { "Категория 1", "Категория 2", "Категория 3" };
+            using (ExcelLabEntities ExcelEntities = new ExcelLabEntities())
+            {
+                allEntities = ExcelEntities.Users.ToList().OrderBy(s => s.Client_ID).ToList();
+            }
+            var app = new Excel.Application();
+            app.SheetsInNewWorkbook = allType.Count();
+            Excel.Workbook workbook = app.Workbooks.Add(Type.Missing);
+            for (int i = 0; i < allType.Count(); i++)
+            {
+                int startRowIndex = 1;
+                Excel.Worksheet worksheet = app.Worksheets.Item[i + 1];
+                worksheet.Name = Convert.ToString(allType[i]);
+                worksheet.Cells[1][startRowIndex] = "Код клиента";
+                worksheet.Cells[2][startRowIndex] = "ФИО";
+                worksheet.Cells[3][startRowIndex] = "Email";
+                startRowIndex++;
+                foreach (Users service in allEntities)
+                {
+                    if (DateTimeConvert(service.Date_Birth) >= 20 && DateTimeConvert(service.Date_Birth) <= 29 && allType[i] == "Категория 1")
+                    {
+                        worksheet.Cells[1][startRowIndex] = service.Client_ID;
+                        worksheet.Cells[2][startRowIndex] = service.Name;
+                        worksheet.Cells[3][startRowIndex] = service.Email;
+                        startRowIndex++;
+                    }
+                    else if (DateTimeConvert(service.Date_Birth) >= 30 && DateTimeConvert(service.Date_Birth) <= 39 && allType[i] == "Категория 2")
+                    {
+                        worksheet.Cells[1][startRowIndex] = service.Client_ID;
+                        worksheet.Cells[2][startRowIndex] = service.Name;
+                        worksheet.Cells[3][startRowIndex] = service.Email;
+                        startRowIndex++;
+                    }
+                    else if (DateTimeConvert(service.Date_Birth) >= 40 && allType[i] == "Категория 3")
+                    {
+                        worksheet.Cells[1][startRowIndex] = service.Client_ID;
+                        worksheet.Cells[2][startRowIndex] = service.Name;
+                        worksheet.Cells[3][startRowIndex] = service.Email;
+                        startRowIndex++;
+                    }
+                }
+                worksheet.Columns.AutoFit();
+            }
+            app.Visible = true;
         }
     }
 }

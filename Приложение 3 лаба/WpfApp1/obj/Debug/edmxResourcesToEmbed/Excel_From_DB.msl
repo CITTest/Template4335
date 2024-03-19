@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище ExcelLabModelContainer" CdmEntityContainer="ExcelLabEntities">
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="ExcelLabModel.sysdiagram">
+      <EntityTypeMapping TypeName="ExcelLabModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -13,7 +13,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="ExcelLabModel.User">
+      <EntityTypeMapping TypeName="ExcelLabModel.Users">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />

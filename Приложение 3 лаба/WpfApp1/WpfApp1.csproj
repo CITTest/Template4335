@@ -78,10 +78,10 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Excel_From_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>Excel_From_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
+    <Compile Include="Users.cs">
       <DependentUpon>Excel_From_DB.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">

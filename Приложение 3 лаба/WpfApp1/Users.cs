@@ -12,7 +12,7 @@ namespace WpfApp1
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Users
     {
         public int Client_ID { get; set; }
         public string Name { get; set; }
